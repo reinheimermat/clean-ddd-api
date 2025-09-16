@@ -1,4 +1,3 @@
-import { expect, it } from 'vitest'
 import { Slug } from './slug'
 
 it('should be ablet to create a slug from a string', () => {

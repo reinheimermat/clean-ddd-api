@@ -1,4 +1,3 @@
-import { expect, it } from 'vitest'
 import type { AnswersRepository } from '../repositories/answers-repository'
 import { AnswerQuestionUseCase } from './answer-question'
 
