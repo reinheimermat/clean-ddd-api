@@ -13,7 +13,7 @@ describe('Fetch Question Comments', () => {
     sut = new FetchQuestionCommentsUseCase(inMemoryQuestionCommentsRepository)
   })
 
-  it('should be able to fetch recent comments', async () => {
+  it('should be able to fetch question comments', async () => {
     inMemoryQuestionCommentsRepository.create(
       makeQuestionComment({ questionId: new UniqueEntityId('question-1') }),
     )
