@@ -10,7 +10,8 @@
     "source.action.useSortedProperties.biome": "always",
     "source.fixAll.biome": "always",
     "source.fixAll.eslint": "never",
-    "source.organizeImports.biome": "always"
+    "source.organizeImports.biome": "always",
+    "source.addMissingImports.ts": "always"
   },
   "editor.defaultFormatter": "biomejs.biome"
 }
