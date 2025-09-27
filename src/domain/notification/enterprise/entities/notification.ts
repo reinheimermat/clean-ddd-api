@@ -3,11 +3,11 @@ import type { UniqueEntityId } from '@/core/entities/unique-entity-id'
 import type { Optional } from '@/core/types/optional'
 
 interface NotificationProps {
-  recipientId: string
+  recipientId: UniqueEntityId
   title: string
   content: string
   createdAt: Date
-  readAt: Date
+  readAt?: Date
 }
 
 export class Notification extends Entity<NotificationProps> {
