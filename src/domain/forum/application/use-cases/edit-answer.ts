@@ -3,10 +3,10 @@ import { UniqueEntityId } from '@/core/entities/unique-entity-id'
 import type { AnswerAttachmentsRepository } from '@/domain/forum/application/repositories/answer-attachments-repository'
 import { AnswerAttachment } from '@/domain/forum/enterprise/entities/answer-attachment'
 import { AnswerAttachmentList } from '@/domain/forum/enterprise/entities/answer-attachment-list'
+import { NotAllowedError } from '../../../../core/errors/not-allowed-error'
+import { ResourceNotFoundError } from '../../../../core/errors/resource-not-found-error'
 import type { Answer } from '../../enterprise/entities/answer'
 import type { AnswersRepository } from '../repositories/answers-repository'
-import { NotAllowedError } from './errors/not-allowed-error'
-import { ResourceNotFoundError } from './errors/resource-not-found-error'
 
 interface EditAnswerUseCaseRequest {
   authorId: string

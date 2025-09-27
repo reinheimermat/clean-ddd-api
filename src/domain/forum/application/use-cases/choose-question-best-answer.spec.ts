@@ -5,7 +5,7 @@ import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-r
 import { InMemoryQuestionAttachmentsRepository } from 'test/repositories/in-memory-question-attachments-repository'
 import { InMemoryQuestionsRepository } from 'test/repositories/in-memory-questions-repository'
 import { UniqueEntityId } from '@/core/entities/unique-entity-id'
-import { NotAllowedError } from '@/domain/forum/application/use-cases/errors/not-allowed-error'
+import { NotAllowedError } from '@/core/errors/not-allowed-error'
 import { ChooseQuestionBestAnswerUseCase } from './choose-question-best-answer'
 
 let inMemoryQuestionAttachmentsRepository: InMemoryQuestionAttachmentsRepository
