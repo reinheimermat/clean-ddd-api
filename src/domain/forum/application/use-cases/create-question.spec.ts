@@ -1,4 +1,5 @@
 import { InMemoryQuestionsRepository } from 'test/repositories/in-memory-questions-repository'
+import { UniqueEntityId } from '@/core/entities/unique-entity-id'
 import { CreateQuestionUseCase } from './create-question'
 
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository
@@ -20,13 +21,17 @@ describe('Create Question', () => {
 
     expect(result.isRight()).toBeTruthy()
     expect(inMemoryQuestionsRepository.items[0]).toEqual(result.value?.question)
-    expect(inMemoryQuestionsRepository.items[0].attachments).toHaveLength(2)
-    expect(inMemoryQuestionsRepository.items[0].attachments).toEqual([
+    expect(
+      inMemoryQuestionsRepository.items[0].attachments.currentItems,
+    ).toHaveLength(2)
+    expect(
+      inMemoryQuestionsRepository.items[0].attachments.currentItems,
+    ).toEqual([
       expect.objectContaining({
-        attachmentId: result.value?.question.attachments[0].attachmentId,
+        attachmentId: new UniqueEntityId('1'),
       }),
       expect.objectContaining({
-        attachmentId: result.value?.question.attachments[1].attachmentId,
+        attachmentId: new UniqueEntityId('2'),
       }),
     ])
   })
