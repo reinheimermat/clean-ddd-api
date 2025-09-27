@@ -1,4 +1,5 @@
 import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository'
+import { UniqueEntityId } from '@/core/entities/unique-entity-id'
 import { AnswerQuestionUseCase } from './answer-question'
 
 let inMemoryAnswersRepository: InMemoryAnswersRepository
@@ -14,10 +15,23 @@ describe('Answer Question', () => {
     const result = await sut.execute({
       content: 'This is an answer',
       instructorId: '1',
-      questionId: '2',
+      questionId: '1',
+      attachmentsIds: ['1', '2'],
     })
 
     expect(result.isRight()).toBeTruthy()
-    expect(inMemoryAnswersRepository.items[0]).toEqual(result.value?.answer)
+    expect(
+      inMemoryAnswersRepository.items[0].attachments.currentItems,
+    ).toHaveLength(2)
+    expect(inMemoryAnswersRepository.items[0].attachments.currentItems).toEqual(
+      [
+        expect.objectContaining({
+          attachmentId: new UniqueEntityId('1'),
+        }),
+        expect.objectContaining({
+          attachmentId: new UniqueEntityId('2'),
+        }),
+      ],
+    )
   })
 })
