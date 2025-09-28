@@ -2,8 +2,8 @@
 /** biome-ignore-all lint/suspicious/useIterableCallbackReturn: false */
 /** biome-ignore-all lint/suspicious/noExplicitAny: false */
 
+import type { AggregateRoot } from '@/core/entities/aggregate-root'
 import type { UniqueEntityId } from '@/core/entities/unique-entity-id'
-import type { AggregateRoot } from '@/core/events/aggregate-root'
 import type { DomainEvent } from '@/core/events/domain-event'
 
 type DomainEventCallback = (event: unknown) => void
