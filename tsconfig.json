@@ -8,6 +8,7 @@
     "target": "es2022",
 
     "strict": true,
+    "strictBindCallApply": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "moduleResolution": "node16",

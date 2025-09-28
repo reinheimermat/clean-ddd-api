@@ -3,6 +3,7 @@ import type { UniqueEntityId } from '@/core/entities/unique-entity-id'
 
 interface StudentProps {
   name: string
+  email: string
 }
 
 export class Student extends Entity<StudentProps> {
@@ -10,5 +11,13 @@ export class Student extends Entity<StudentProps> {
     const student = new Student(props, id)
 
     return student
+  }
+
+  get name() {
+    return this.props.name
+  }
+
+  get email() {
+    return this.props.email
   }
 }
