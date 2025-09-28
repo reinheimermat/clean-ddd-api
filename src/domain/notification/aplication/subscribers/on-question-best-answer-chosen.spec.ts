@@ -58,7 +58,7 @@ describe('On Question Best Answer Chosen', () => {
     )
   })
 
-  it('should  send a notification when topic has new best answer chosen', async () => {
+  it('should send a notification when topic has new best answer chosen', async () => {
     const question = makeQuestion()
     const answer = makeAnswer({ questionId: question.id })
 
